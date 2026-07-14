@@ -1,0 +1,32 @@
+MEDMINUTE — DEPLOY TO VERCEL
+
+WHAT IS ALREADY DONE
+- The project is prepared as a Node.js/Express application.
+- Vercel detects server.mjs automatically.
+- The OpenAI key stays on the server as an encrypted environment variable.
+- .env is excluded from Git so the key is not uploaded publicly.
+- /api/health is included for testing.
+
+YOU STILL NEED TO DO THESE ACCOUNT-OWNER STEPS
+1. Create/sign in to a GitHub account.
+2. Create a new PRIVATE repository named medminute.
+3. Upload the contents of this folder to that repository.
+4. Sign in to Vercel with GitHub.
+5. Import the medminute repository.
+6. In Vercel Project Settings > Environment Variables, add:
+   OPENAI_API_KEY = your private API key
+   OPENAI_MODEL = gpt-5-mini
+7. Apply both variables to Production, Preview and Development.
+8. Deploy, or redeploy after saving the variables.
+9. Test:
+   https://YOUR-VERCEL-URL/api/health
+   https://YOUR-VERCEL-URL/ai-tutor.html
+
+EXPECTED HEALTH RESULT
+{"ok":true,"ai_configured":true,"model":"gpt-5-mini","environment":"vercel"}
+
+IMPORTANT ANALYTICS NOTE
+The AI Tutor will work online. The current custom analytics dashboard writes to
+data/analytics.json. Vercel server storage is not permanent, so long-term dashboard
+figures require a database such as Supabase, Neon or Upstash. The rest of the website
+and AI features can be deployed now.

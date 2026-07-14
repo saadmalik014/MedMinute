@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>MedMinute Professional</title><meta content="A student-led medical education platform." name="description"/><link href="assets/styles.css" rel="stylesheet"/></head><body>
+<div class="company-announcement">MedMinute 4.3 introduces the redesigned professional Anatomy Explorer. <a href="impact.html">View Live Impact</a></div><header class="pro-header">
+<div class="container pro-nav">
+<a class="pro-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Medicine, explained with clarity.</span></div>
+</a>
+<button aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav class="pro-links"><a class="" href="impact.html">Impact</a><a class="" href="dashboard.html">Dashboard</a><a class="active" href="index.html">Home</a><a class="" href="learn.html">Learn</a><a class="" href="academy.html">Study</a><a class="" href="clinical-skills.html">Clinical</a><a class="" href="specialties.html">Careers</a><a class="" href="ai-tutor.html">AI Tutor</a><a class="" href="challenge.html">Challenge</a><a class="" href="founder.html">Founder</a></nav>
+<div class="pro-actions">
+<button aria-label="Search" class="icon-button" id="globalSearchButton">⌕</button>
+<button aria-label="Toggle dark mode" class="icon-button" id="themeToggle">◐</button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="search-overlay" id="searchOverlay">
+<div class="search-panel">
+<div class="search-panel-head">
+<div><span class="eyebrow">Global Search</span><h2>Search all of MedMinute</h2></div>
+<button aria-label="Close search" class="icon-button" id="closeSearch">×</button>
+</div>
+<input class="global-search-input" id="globalSearchInput" placeholder="Search articles, specialties, skills, cases and study resources..."/>
+<div class="global-search-results" id="globalSearchResults"></div>
+</div>
+</div>
+<main class="page-enter">
+<section class="platform-hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">MedMinute Professional</div>
+<h1>Medical education designed to feel <span>clear, modern and useful.</span></h1>
+<p>Explore diseases, anatomy, clinical skills, healthcare careers, interactive cases and Alberta Biology 20 and Chemistry 30 resources—all within one connected learning platform.</p>
+<div class="button-row">
+<a class="btn btn-primary" href="learn.html">Explore MedMinute</a>
+<a class="btn btn-secondary" href="academy.html">Continue Studying</a>
+</div>
+<div class="quick-nav">
+<a href="health-library.html">Health Library</a>
+<a href="anatomy.html">Interactive Anatomy</a>
+<a href="clinical-skills.html">Clinical Skills</a>
+<a href="final-exams.html">Final Exams</a>
+</div>
+</div>
+<div class="dashboard-card">
+<span class="eyebrow">Platform Snapshot</span>
+<div class="live-counter-strip" style="margin-top:18px;grid-template-columns:repeat(2,1fr)">
+<div class="live-counter"><strong>46</strong><span>Health articles</span></div>
+<div class="live-counter"><strong>32</strong><span>Career guides</span></div>
+<div class="live-counter"><strong>82</strong><span>Dictionary terms</span></div>
+<div class="live-counter"><strong>60</strong><span>Final exam questions</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-heading"><span class="eyebrow">Learning Dashboard</span><h2>One platform, multiple ways to learn.</h2><p>Explore by topic, body system, career, clinical skill or exam objective.</p></div>
+<div class="premium-grid"><a class="premium-card" href="ai-tutor.html"><strong>AI Tutor</strong><p>Personalized teaching, quizzes, flashcards, mastery tracking and next-lesson recommendations.</p></a>
+<a class="premium-card" href="health-library.html"><strong>Health Library</strong><p>Expandable specialty sections and original medical articles.</p></a>
+<a class="premium-card" href="academy.html"><strong>Academy</strong><p>Biology 20, Chemistry 30, flashcards, practice and diploma preparation.</p></a>
+<a class="premium-card" href="clinical-skills.html"><strong>Clinical Skills</strong><p>ECGs, blood pressure, pulse oximetry, nursing skills and diagnostics.</p></a>
+<a class="premium-card" href="anatomy.html"><strong>Professional Anatomy Explorer</strong><p>Explore a detailed layered body model by system, structure and region with clinical connections.</p></a>
+<a class="premium-card" href="specialties.html"><strong>Career Guides</strong><p>Training pathways, daily work, common conditions and day-in-the-life content.</p></a>
+<a class="premium-card" href="challenge.html"><strong>Challenge Mode</strong><p>Thirty interactive days with lessons, clinical decisions, XP, lives, chapter badges and a final virtual patient.</p></a>
+</div>
+</div>
+</section>
+<section class="section section-soft">
+<div class="container progress-shell">
+<div class="dashboard-card">
+<span class="eyebrow">Learning Progress</span>
+<h2 style="margin-top:14px">Your browser-based dashboard</h2>
+<p>Progress updates as you complete challenge days, final exams and selected learning activities.</p>
+<div class="progress-item"><div class="progress-label"><span>30-Day Challenge</span><span id="homeChallengePercent">0%</span></div><div class="progress-track"><span id="homeChallengeBar" style="width:0%"></span></div></div>
+<div class="progress-item"><div class="progress-label"><span>Biology Final Exam</span><span id="homeBioScore">Not attempted</span></div><div class="progress-track"><span id="homeBioBar" style="width:0%"></span></div></div>
+<div class="progress-item"><div class="progress-label"><span>Chemistry Final Exam</span><span id="homeChemScore">Not attempted</span></div><div class="progress-track"><span id="homeChemBar" style="width:0%"></span></div></div>
+</div>
+<div class="streak-box"><div><strong id="learningStreak">1</strong><span>day learning streak</span><p style="color:#dbe8f5">Return regularly to keep building your medical knowledge.</p></div></div>
+</div>
+</section>
+<section class="section">
+<div class="container grid-2">
+<div>
+<span class="eyebrow">Why MedMinute exists</span>
+<h2 style="font-size:2.5rem;margin-top:14px">Built from a real interest in medicine and health education.</h2>
+<p>MedMinute began with the founder's experience learning about hypothyroidism, laboratory testing and specialist care. It developed into a broader platform designed to make medicine easier to explore.</p>
+<a class="btn btn-primary" href="founder.html">Meet the Founder</a>
+</div>
+<div class="card">
+<h3>What makes the platform different?</h3>
+<p>Articles, careers, anatomy, clinical skills, study resources and interactive tools are connected rather than isolated.</p>
+<div class="notice" style="margin-top:18px">MedMinute is educational and does not diagnose conditions or replace professional medical care.</div>
+</div>
+</div>
+</section>
+<section class="section modern-platform-section">
+<div class="container">
+<div class="section-heading">
+<span class="eyebrow">MedMinute 4.3</span>
+<h2>A premium interactive medical learning platform.</h2>
+<p>MedMinute now combines original health education, interactive learning, artificial intelligence and browser-based progress tracking across 112 indexed pages and resources.</p>
+</div>
+<div class="modern-feature-grid">
+<a class="modern-feature-card" href="challenge.html"><span>30</span><h3>Interactive Challenge Mode</h3><p>Complete real quizzes, matching activities, clinical pathways and a final virtual patient—not a checklist.</p></a>
+
+<a class="modern-feature-card" href="ai-tutor.html"><span>AI</span><h3>AI Tutor</h3><p>Personalized explanations, quizzes, flashcards, Alberta practice and lesson recommendations.</p></a>
+<a class="modern-feature-card" href="biology-animations.html"><span>06</span><h3>Biology Animations</h3><p>Six completed interactive learning modules with controls and responsive diagrams.</p></a>
+<a class="modern-feature-card" href="academy.html"><span>PDF</span><h3>Medical Infographics</h3><p>Downloadable PNG and PDF resources for stroke, heart attack, thyroid hormones and blood pressure.</p></a>
+<a class="modern-feature-card" href="dashboard.html"><span>↗</span><h3>Learning Dashboard</h3><p>Automatic achievements, recent activity, exam results, mastery and recommendations.</p></a>
+<a class="modern-feature-card" href="final-exams.html"><span>60</span><h3>Final Exam Centre</h3><p>Two comprehensive 30-question exams with complete answer-review mode.</p></a>
+<a class="modern-feature-card" href="clinical-skills.html"><span>20</span><h3>Clinical Skills</h3><p>Vital signs, diagnostics, nursing practice, patient safety and hospital procedures.</p></a>
+<a class="modern-feature-card" href="health-library.html"><span>51</span><h3>Health Library</h3><p>Common and important diseases organized into expandable medical specialties.</p></a>
+<a class="modern-feature-card" href="cases.html"><span>24</span><h3>Case Challenges</h3><p>Interactive clinical-reasoning questions with immediate feedback.</p></a>
+</div>
+</div>
+</section>
+<section class="section section-soft">
+<div class="container">
+<div class="section-heading"><h2>Platform totals</h2><p>A current view of the educational resources inside MedMinute.</p></div>
+<div class="live-counter-strip">
+<div class="live-counter"><strong data-count="106">0</strong><span>Total pages</span></div>
+<div class="live-counter"><strong data-count="51">0</strong><span>Health articles</span></div>
+<div class="live-counter"><strong data-count="32">0</strong><span>Career guides</span></div>
+<div class="live-counter"><strong data-count="82">0</strong><span>Dictionary terms</span></div>
+<div class="live-counter"><strong data-count="60">0</strong><span>Final exam questions</span></div>
+</div>
+</div>
+</section>
+<section class="section"><div class="container"><div class="continue-card" id="continueLearningCard">
+<div><span class="eyebrow">Continue where you left off</span><h2 id="continueLearningTitle">Start exploring MedMinute</h2><p id="continueLearningDescription">Your most recent learning resource will appear here automatically.</p></div>
+<a class="btn btn-primary" href="learn.html" id="continueLearningLink">Continue Learning</a></div></div></section>
+<section class="section section-soft"><div class="container"><div class="section-heading"><span class="eyebrow">Premium New Experiences</span><h2>More interactive, accessible and personalized than ever.</h2></div>
+<div class="modern-feature-grid">
+<a class="modern-feature-card" href="anatomy.html"><span>3D</span><h3>Anatomy Explorer</h3><p>A redesigned atlas interface with system isolation, structure search, regional focus, zoom, rotation and clinical learning.</p></a>
+<a class="modern-feature-card" href="image-explainer.html"><span>AI</span><h3>Medical Image Explainer</h3><p>Educational explanation of de-identified ECGs, anatomy diagrams and sample images.</p></a>
+<a class="modern-feature-card" href="certificates.html"><span>✓</span><h3>Certificates</h3><p>Generate completion credentials after meeting verified learning requirements.</p></a>
+<a class="modern-feature-card" href="ai-tutor.html"><span>🔊</span><h3>Voice AI Tutor</h3><p>Listen to generated explanations and tutor feedback using built-in speech controls.</p></a>
+</div></div></section>
+
+<section class="section live-impact-preview">
+  <div class="container">
+    <div class="company-panel-head"><div><span class="eyebrow">Verified Platform Impact</span><h2>See MedMinute being used in real time.</h2><p>Anonymous totals update automatically as learners explore articles, use the AI Tutor, complete quizzes and earn certificates.</p></div><a class="btn btn-primary" href="impact.html">Open Live Dashboard</a></div>
+    <div class="impact-metric-grid compact-impact-grid">
+      <article class="impact-metric primary"><span>Total visitors</span><strong id="homeLiveVisitors">—</strong><small>Unique anonymous browsers</small></article>
+      <article class="impact-metric"><span>Articles read</span><strong id="homeLiveReads">—</strong><small>Meaningful engagement</small></article>
+      <article class="impact-metric"><span>AI Tutor uses</span><strong id="homeLiveAI">—</strong><small>Learning activities generated</small></article>
+      <article class="impact-metric"><span>Certificates</span><strong id="homeLiveCertificates">—</strong><small>Completion credentials earned</small></article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pro-footer">
+<div class="container">
+<div class="pro-footer-grid">
+<div>
+<a class="pro-brand footer-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Making medicine understandable.</span></div>
+</a>
+<p>A student-led medical education platform created in Qatar.</p>
+</div>
+<div><h3>Learn</h3><a href="health-library.html">Health Library</a><a href="anatomy.html">Interactive Anatomy</a><a href="dictionary.html">Medical Dictionary</a></div>
+<div><h3>Study</h3><a href="academy.html">Academy</a><a href="final-exams.html">Final Exams</a><a href="cases.html">Case Challenges</a></div>
+<div><h3>Explore</h3><a href="ai-tutor.html">MedMinute AI Tutor</a><a href="ai-assistant.html">MedMinute AI Q&amp;A</a><a href="specialties.html">Career Guides</a><a href="founder.html">Meet the Founder</a><a href="impact.html">Live Impact</a><a href="certificates.html">Certificates</a></div>
+</div>
+<div class="footer-line">
+<span>© 2026 MedMinute</span>
+<span>Educational content only. Not medical advice.</span>
+<a href="mailto:infomedminute@gmail.com">infomedminute@gmail.com</a>
+</div>
+</div>
+</footer>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+<div class="accessibility-launcher">
+<button aria-label="Open accessibility controls" id="accessibilityToggle">Aa</button>
+<div class="accessibility-panel" id="accessibilityPanel">
+<strong>Accessibility</strong>
+<button data-accessibility="font-down" type="button">Decrease text size</button>
+<button data-accessibility="font-up" type="button">Increase text size</button>
+<button data-accessibility="motion" type="button">Reduce animations</button>
+<button data-accessibility="contrast" type="button">High contrast</button>
+</div>
+</div>
+</body></html>

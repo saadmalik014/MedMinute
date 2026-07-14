@@ -1,0 +1,77 @@
+MEDMINUTE 3.2 AI TUTOR — ACTIVATION
+
+The visual website can be previewed by opening index.html, but the real AI and AI Tutor require
+the secure Node.js server.
+
+LOCAL SETUP
+1. Install Node.js 20 or newer.
+2. Unzip this folder and open Terminal/PowerShell inside it.
+3. Run:
+       npm install
+4. Set your private OpenAI environment variables.
+
+macOS/Linux:
+       export OPENAI_API_KEY="your_private_api_key"
+       export OPENAI_MODEL="a_model_available_in_your_API_project"
+       npm start
+
+Windows PowerShell:
+       $env:OPENAI_API_KEY="your_private_api_key"
+       $env:OPENAI_MODEL="a_model_available_in_your_API_project"
+       npm start
+
+5. Open:
+       http://localhost:3000/ai-tutor.html
+
+NEVER place the API key in HTML, assets/script.js or any public browser file.
+
+AI TUTOR FEATURES
+- Teach mode: structured explanation grounded in MedMinute
+- Quiz mode: original six-question scored quizzes
+- Flashcards: ten generated cards
+- Test Me: one question at a time with answer evaluation
+- Alberta Practice: Biology 20 and Chemistry 30 teaching/practice
+- Next Lesson: recommendations based on locally stored mastery
+- Session memory: recent conversation is sent during the current page session
+- Mastery tracking: quiz and tutor scores are saved in the browser
+
+DEPLOYMENT
+Use Node-compatible hosting. Upload the complete project and set OPENAI_API_KEY and
+OPENAI_MODEL as private environment variables in the host settings.
+
+
+MEDMINUTE 3.4 SERVER FIXES
+- .env files are now loaded automatically through dotenv.
+- The Express 5 fallback route has been updated to avoid wildcard startup errors.
+- The AI corpus and global search index now include Biology Animations and downloadable infographics.
+
+Recommended local activation:
+1. Copy .env.example to .env
+2. Enter OPENAI_API_KEY and OPENAI_MODEL
+3. Run npm install
+4. Run npm start
+5. Open http://localhost:3000
+
+
+MEDICAL IMAGE EXPLAINER
+- The Image Explainer uses the same secure OpenAI server.
+- It accepts de-identified PNG, JPEG and WebP educational images.
+- Never upload patient names, IDs, faces or other identifying information.
+- The browser sends the image to /api/image-explain only after consent is checked.
+
+VOICE AI TUTOR
+- Voice playback uses the browser's built-in Speech Synthesis feature.
+- It does not require an additional API or secret key.
+- Availability and voice quality depend on the browser/device.
+
+
+LIVE IMPACT ANALYTICS
+- The website creates an anonymous random visitor ID in the learner's browser.
+- Aggregate events are stored in data/analytics.json by the Node server.
+- The public impact dashboard is available at /impact.html and refreshes every 15 seconds.
+- Tracked totals include unique visitors, page views, meaningful article reads, AI Tutor use,
+  AI questions, image explanations, quizzes, cases and certificates.
+- No names, email addresses, medical questions, uploaded images or precise locations are stored.
+- IMPORTANT: production hosting must provide persistent server storage, or the analytics file
+  will reset whenever the host rebuilds or restarts. For serverless hosting, connect the same
+  endpoints to a persistent database before relying on long-term totals.

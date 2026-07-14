@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Academy | MedMinute</title>
+<meta content="MedMinute educational content" name="description"/>
+<link href="assets/styles.css" rel="stylesheet"/></head><body><div class="company-announcement">MedMinute 4.3 introduces the redesigned professional Anatomy Explorer. <a href="impact.html">View Live Impact</a></div><header class="pro-header">
+<div class="container pro-nav">
+<a class="pro-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Medicine, explained with clarity.</span></div>
+</a>
+<button aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav class="pro-links"><a class="" href="impact.html">Impact</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="index.html">Home</a><a class="" href="learn.html">Learn</a><a class="active" href="academy.html">Study</a><a class="" href="clinical-skills.html">Clinical</a><a class="" href="specialties.html">Careers</a><a class="" href="ai-tutor.html">AI Tutor</a><a class="" href="challenge.html">Challenge</a><a class="" href="founder.html">Founder</a></nav>
+<div class="pro-actions">
+<button aria-label="Search" class="icon-button" id="globalSearchButton">⌕</button>
+<button aria-label="Toggle dark mode" class="icon-button" id="themeToggle">◐</button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="search-overlay" id="searchOverlay">
+<div class="search-panel">
+<div class="search-panel-head">
+<div><span class="eyebrow">Global Search</span><h2>Search all of MedMinute</h2></div>
+<button aria-label="Close search" class="icon-button" id="closeSearch">×</button>
+</div>
+<input class="global-search-input" id="globalSearchInput" placeholder="Search articles, specialties, skills, cases and study resources..."/>
+<div class="global-search-results" id="globalSearchResults"></div>
+</div>
+</div>
+<main class="page-enter">
+<section class="page-hero">
+<div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="academy.html">Study</a><span>›</span><strong>Watch biological processes unfold.</strong></div>
+<div class="eyebrow">Interactive Alberta Biology Modules</div>
+<h1>Watch biological processes unfold.</h1><div class="page-status-meta"><span>1 min estimated</span><span>Last updated July 15, 2026</span></div>
+<p>Use the controls to animate, pause, reset and explore six Biology 20 learning modules.</p>
+</div>
+</section>
+<section class="section">
+<div class="container animation-module-grid">
+<article class="bio-animation-module" id="dnaReplication">
+<div class="animation-copy"><span class="badge">Genetics</span><h2>DNA Replication</h2>
+<p>See the double helix unzip and complementary nucleotides join each template strand.</p>
+<ul><li>A pairs with T.</li><li>C pairs with G.</li><li>Replication is semiconservative.</li></ul></div>
+<div class="animation-stage dna-stage">
+<div class="dna-fork"></div>
+<div class="strand strand-top"></div><div class="strand strand-bottom"></div>
+<div class="nucleotide n1">A</div><div class="nucleotide n2">T</div><div class="nucleotide n3">C</div><div class="nucleotide n4">G</div>
+<div class="animation-caption">Template strands separate; new complementary strands form.</div>
+</div>
+<div class="animation-controls"><button data-action="play">Play</button><button data-action="pause">Pause</button><button data-action="reset">Reset</button></div>
+</article>
+<article class="bio-animation-module" id="proteinSynthesis">
+<div class="animation-copy"><span class="badge">Molecular Biology</span><h2>Protein Synthesis</h2>
+<p>Follow transcription from DNA to mRNA, then translation at a ribosome.</p>
+<ul><li>DNA is transcribed into mRNA.</li><li>Ribosomes read codons.</li><li>tRNA delivers amino acids.</li></ul></div>
+<div class="animation-stage protein-stage">
+<div class="dna-label">DNA</div><div class="dna-line">T A C G G A A C T</div>
+<div class="mrna-label">mRNA</div><div class="mrna-line">A U G C C U U G A</div>
+<div class="ribosome">Ribosome</div>
+<div class="amino-chain"><span>Met</span><span>Pro</span><span>Stop</span></div>
+<div class="animation-caption">Transcription → translation → polypeptide.</div>
+</div>
+<div class="animation-controls"><button data-action="play">Play</button><button data-action="pause">Pause</button><button data-action="reset">Reset</button></div>
+</article>
+<article class="bio-animation-module" id="photosynthesisAnimation">
+<div class="animation-copy"><span class="badge">Cellular Energy</span><h2>Photosynthesis</h2>
+<p>Adjust light intensity and carbon dioxide to see their effect on photosynthetic rate.</p></div>
+<div class="animation-stage photo-stage">
+<div class="sun">☀</div><div class="leaf">Leaf</div>
+<div class="co2-flow">CO₂ →</div><div class="o2-flow">→ O₂</div>
+<div class="rate-meter"><span id="photoRateBar"></span></div>
+<div class="animation-caption" id="photoCaption">Rate: moderate</div>
+</div>
+<div class="slider-controls"><label>Light <input id="lightSlider" max="100" min="0" type="range" value="60"/></label>
+<label>CO₂ <input id="co2Slider" max="100" min="0" type="range" value="60"/></label></div>
+</article>
+<article class="bio-animation-module" id="respirationAnimation">
+<div class="animation-copy"><span class="badge">Cellular Energy</span><h2>Cellular Respiration</h2>
+<p>Trace glucose through glycolysis, the Krebs cycle and the electron transport chain.</p></div>
+<div class="animation-stage respiration-stage">
+<div class="resp-step" data-step="1">Glucose</div><div class="resp-arrow">→</div>
+<div class="resp-step" data-step="2">Glycolysis</div><div class="resp-arrow">→</div>
+<div class="resp-step" data-step="3">Krebs Cycle</div><div class="resp-arrow">→</div>
+<div class="resp-step" data-step="4">ETC</div><div class="resp-arrow">→</div>
+<div class="resp-step" data-step="5">ATP</div>
+<div class="animation-caption">Most ATP is produced by oxidative phosphorylation.</div>
+</div>
+<div class="animation-controls"><button data-action="play">Play</button><button data-action="pause">Pause</button><button data-action="reset">Reset</button></div>
+</article>
+<article class="bio-animation-module" id="populationAnimation">
+<div class="animation-copy"><span class="badge">Ecology</span><h2>Population Dynamics</h2>
+<p>Compare exponential growth with logistic growth as a population approaches carrying capacity.</p></div>
+<div class="animation-stage population-stage">
+<svg aria-label="Animated population growth graph" viewbox="0 0 620 300">
+<line class="axis" x1="55" x2="585" y1="250" y2="250"></line>
+<line class="axis" x1="55" x2="55" y1="250" y2="35"></line>
+<line class="capacity" x1="55" x2="585" y1="90" y2="90"></line>
+<text x="430" y="78">Carrying capacity</text>
+<path class="growth logistic" d="M55 245 C130 240,150 220,210 180 S330 95,580 90" id="logisticPath"></path>
+<path class="growth exponential" d="M55 245 C160 240,250 210,330 140 S450 35,580 -40" id="exponentialPath"></path>
+</svg>
+<div class="animation-caption">Logistic growth slows as limiting factors increase.</div>
+</div>
+<div class="animation-controls"><button data-action="play">Play</button><button data-action="pause">Pause</button><button data-action="reset">Reset</button></div>
+</article>
+<article class="bio-animation-module" id="humanSystemsAnimation">
+<div class="animation-copy"><span class="badge">Human Systems</span><h2>Human Body Systems</h2>
+<p>Follow oxygen from inhalation to tissues and carbon dioxide back to the lungs.</p></div>
+<div class="animation-stage systems-stage">
+<div class="system-node lungs-node">Lungs</div><div class="system-arrow a1">O₂</div>
+<div class="system-node heart-node">Heart</div><div class="system-arrow a2">O₂-rich blood</div>
+<div class="system-node cells-node">Body Cells</div><div class="system-arrow a3">CO₂</div>
+<div class="system-node return-node">Heart → Lungs</div>
+<div class="animation-caption">Respiratory and circulatory systems work together to maintain gas exchange.</div>
+</div>
+<div class="animation-controls"><button data-action="play">Play</button><button data-action="pause">Pause</button><button data-action="reset">Reset</button></div>
+</article>
+</div>
+</section>
+</main>
+<footer class="pro-footer">
+<div class="container">
+<div class="pro-footer-grid">
+<div>
+<a class="pro-brand footer-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Making medicine understandable.</span></div>
+</a>
+<p>A student-led medical education platform created in Qatar.</p>
+</div>
+<div><h3>Learn</h3><a href="health-library.html">Health Library</a><a href="anatomy.html">Interactive Anatomy</a><a href="dictionary.html">Medical Dictionary</a></div>
+<div><h3>Study</h3><a href="academy.html">Academy</a><a href="final-exams.html">Final Exams</a><a href="cases.html">Case Challenges</a></div>
+<div><h3>Explore</h3><a href="ai-tutor.html">MedMinute AI Tutor</a><a href="ai-assistant.html">MedMinute AI Q&amp;A</a><a href="specialties.html">Career Guides</a><a href="founder.html">Meet the Founder</a><a href="impact.html">Live Impact</a><a href="certificates.html">Certificates</a></div>
+</div>
+<div class="footer-line">
+<span>© 2026 MedMinute</span>
+<span>Educational content only. Not medical advice.</span>
+<a href="mailto:infomedminute@gmail.com">infomedminute@gmail.com</a>
+</div>
+</div>
+</footer>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+<div class="accessibility-launcher">
+<button aria-label="Open accessibility controls" id="accessibilityToggle">Aa</button>
+<div class="accessibility-panel" id="accessibilityPanel">
+<strong>Accessibility</strong>
+<button data-accessibility="font-down" type="button">Decrease text size</button>
+<button data-accessibility="font-up" type="button">Increase text size</button>
+<button data-accessibility="motion" type="button">Reduce animations</button>
+<button data-accessibility="contrast" type="button">High contrast</button>
+</div>
+</div>
+</body></html>

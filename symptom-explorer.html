@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Symptom Explorer | MedMinute</title>
+<meta content="MedMinute medical education platform" name="description"/>
+<link href="assets/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="company-announcement">MedMinute 4.3 introduces the redesigned professional Anatomy Explorer. <a href="impact.html">View Live Impact</a></div><header class="pro-header">
+<div class="container pro-nav">
+<a class="pro-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Medicine, explained with clarity.</span></div>
+</a>
+<button aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav class="pro-links"><a class="" href="impact.html">Impact</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="index.html">Home</a><a class="active" href="learn.html">Learn</a><a class="" href="academy.html">Study</a><a class="" href="clinical-skills.html">Clinical</a><a class="" href="specialties.html">Careers</a><a class="" href="ai-tutor.html">AI Tutor</a><a class="" href="challenge.html">Challenge</a><a class="" href="founder.html">Founder</a></nav>
+<div class="pro-actions">
+<button aria-label="Search" class="icon-button" id="globalSearchButton">⌕</button>
+<button aria-label="Toggle dark mode" class="icon-button" id="themeToggle">◐</button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="search-overlay" id="searchOverlay">
+<div class="search-panel">
+<div class="search-panel-head">
+<div><span class="eyebrow">Global Search</span><h2>Search all of MedMinute</h2></div>
+<button aria-label="Close search" class="icon-button" id="closeSearch">×</button>
+</div>
+<input class="global-search-input" id="globalSearchInput" placeholder="Search articles, specialties, skills, cases and study resources..."/>
+<div class="global-search-results" id="globalSearchResults"></div>
+</div>
+</div>
+<main class="page-enter">
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="learn.html">Learn</a><span>›</span><strong>Learn what common symptoms can be connected to.</strong></div><div class="eyebrow">Educational Symptom Explorer</div>
+<h1>Learn what common symptoms can be connected to.</h1><div class="page-status-meta"><span>3 min estimated</span><span>Last updated July 15, 2026</span></div>
+<p>This tool helps visitors discover relevant medical topics. It does not diagnose illness or recommend treatment.</p></div></section>
+<section class="section"><div class="container">
+<div class="symptom-grid"><button class="symptom-button active" data-symptom="fatigue" type="button">Fatigue</button><button class="symptom-button" data-symptom="chest-pain" type="button">Chest pain</button><button class="symptom-button" data-symptom="headache" type="button">Headache</button><button class="symptom-button" data-symptom="shortness-of-breath" type="button">Shortness of breath</button><button class="symptom-button" data-symptom="dizziness" type="button">Dizziness</button><button class="symptom-button" data-symptom="abdominal-pain" type="button">Abdominal pain</button><button class="symptom-button" data-symptom="weakness" type="button">Weakness</button><button class="symptom-button" data-symptom="palpitations" type="button">Palpitations</button><button class="symptom-button" data-symptom="weight-loss" type="button">Weight loss</button><button class="symptom-button" data-symptom="weight-gain" type="button">Weight gain</button><button class="symptom-button" data-symptom="fever" type="button">Fever</button><button class="symptom-button" data-symptom="numbness" type="button">Numbness</button></div>
+<div class="symptom-panel active" data-symptom-panel="fatigue">
+<h2>Fatigue</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Hypothyroidism</span><span class="topic-chip">Iron-deficiency anemia</span><span class="topic-chip">Sleep apnea</span><span class="topic-chip">Depression</span><span class="topic-chip">Diabetes</span><span class="topic-chip">Chronic kidney disease</span><span class="topic-chip">Heart failure</span><span class="topic-chip">Infection</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="chest-pain">
+<h2>Chest pain</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Coronary artery disease</span><span class="topic-chip">Heart attack</span><span class="topic-chip">GERD</span><span class="topic-chip">Musculoskeletal pain</span><span class="topic-chip">Pneumonia</span><span class="topic-chip">Anxiety</span><span class="topic-chip">Aortic disease</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="headache">
+<h2>Headache</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Migraine</span><span class="topic-chip">Tension-type headache</span><span class="topic-chip">Dehydration</span><span class="topic-chip">Infection</span><span class="topic-chip">High blood pressure</span><span class="topic-chip">Subarachnoid hemorrhage</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="shortness-of-breath">
+<h2>Shortness of breath</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Asthma</span><span class="topic-chip">Pneumonia</span><span class="topic-chip">Heart failure</span><span class="topic-chip">Anemia</span><span class="topic-chip">COPD</span><span class="topic-chip">Pulmonary embolism</span><span class="topic-chip">Anxiety</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="dizziness">
+<h2>Dizziness</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Dehydration</span><span class="topic-chip">Low blood pressure</span><span class="topic-chip">Anemia</span><span class="topic-chip">Arrhythmia</span><span class="topic-chip">Inner-ear disorders</span><span class="topic-chip">Low blood sugar</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="abdominal-pain">
+<h2>Abdominal pain</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Appendicitis</span><span class="topic-chip">Gallstones</span><span class="topic-chip">GERD</span><span class="topic-chip">Peptic ulcer disease</span><span class="topic-chip">UTI</span><span class="topic-chip">Inflammatory bowel disease</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="weakness">
+<h2>Weakness</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Stroke</span><span class="topic-chip">Electrolyte imbalance</span><span class="topic-chip">Neuropathy</span><span class="topic-chip">Anemia</span><span class="topic-chip">Thyroid disease</span><span class="topic-chip">Infection</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="palpitations">
+<h2>Palpitations</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Atrial fibrillation</span><span class="topic-chip">Hyperthyroidism</span><span class="topic-chip">Anxiety</span><span class="topic-chip">Caffeine effect</span><span class="topic-chip">Anemia</span><span class="topic-chip">Other arrhythmias</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="weight-loss">
+<h2>Weight loss</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Hyperthyroidism</span><span class="topic-chip">Type 1 diabetes</span><span class="topic-chip">Cancer</span><span class="topic-chip">Malabsorption</span><span class="topic-chip">Depression</span><span class="topic-chip">Chronic infection</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="weight-gain">
+<h2>Weight gain</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Hypothyroidism</span><span class="topic-chip">Medication effects</span><span class="topic-chip">Fluid retention</span><span class="topic-chip">PCOS</span><span class="topic-chip">Lifestyle factors</span><span class="topic-chip">Cushing syndrome</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="fever">
+<h2>Fever</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Influenza</span><span class="topic-chip">Pneumonia</span><span class="topic-chip">UTI</span><span class="topic-chip">Sepsis</span><span class="topic-chip">Autoimmune inflammation</span><span class="topic-chip">Other infection</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+<div class="symptom-panel" data-symptom-panel="numbness">
+<h2>Numbness</h2>
+<p>This symptom can have many causes. The topics below are examples for education, not a diagnosis.</p>
+<div><span class="topic-chip">Neuropathy</span><span class="topic-chip">Stroke or TIA</span><span class="topic-chip">Vitamin deficiency</span><span class="topic-chip">Nerve compression</span><span class="topic-chip">Multiple sclerosis</span></div>
+<div class="notice" style="margin-top:18px"><strong>Seek care promptly</strong> when symptoms are sudden, severe, worsening or associated with fainting, breathing difficulty, weakness on one side, confusion or severe pain.</div>
+</div>
+</div></section>
+</main>
+<footer class="pro-footer">
+<div class="container">
+<div class="pro-footer-grid">
+<div>
+<a class="pro-brand footer-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Making medicine understandable.</span></div>
+</a>
+<p>A student-led medical education platform created in Qatar.</p>
+</div>
+<div><h3>Learn</h3><a href="health-library.html">Health Library</a><a href="anatomy.html">Interactive Anatomy</a><a href="dictionary.html">Medical Dictionary</a></div>
+<div><h3>Study</h3><a href="academy.html">Academy</a><a href="final-exams.html">Final Exams</a><a href="cases.html">Case Challenges</a></div>
+<div><h3>Explore</h3><a href="ai-tutor.html">MedMinute AI Tutor</a><a href="ai-assistant.html">MedMinute AI Q&amp;A</a><a href="specialties.html">Career Guides</a><a href="founder.html">Meet the Founder</a><a href="impact.html">Live Impact</a><a href="certificates.html">Certificates</a></div>
+</div>
+<div class="footer-line">
+<span>© 2026 MedMinute</span>
+<span>Educational content only. Not medical advice.</span>
+<a href="mailto:infomedminute@gmail.com">infomedminute@gmail.com</a>
+</div>
+</div>
+</footer>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+<div class="accessibility-launcher">
+<button aria-label="Open accessibility controls" id="accessibilityToggle">Aa</button>
+<div class="accessibility-panel" id="accessibilityPanel">
+<strong>Accessibility</strong>
+<button data-accessibility="font-down" type="button">Decrease text size</button>
+<button data-accessibility="font-up" type="button">Increase text size</button>
+<button data-accessibility="motion" type="button">Reduce animations</button>
+<button data-accessibility="contrast" type="button">High contrast</button>
+</div>
+</div>
+</body>
+</html>

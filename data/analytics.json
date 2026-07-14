@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-07-14T21:32:33Z",
+  "updated_at": "2026-07-14T21:32:33Z",
+  "visitors": {},
+  "totals": {
+    "visits": 0,
+    "page_views": 0,
+    "article_reads": 0,
+    "certificates_earned": 0,
+    "ai_tutor_uses": 0,
+    "ai_questions": 0,
+    "image_explanations": 0,
+    "quizzes_completed": 0,
+    "cases_completed": 0
+  },
+  "pages": {},
+  "events_by_day": {}
+}

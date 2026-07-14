@@ -1,0 +1,116 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Impact Dashboard | MedMinute</title>
+<meta name="description" content="Live anonymous MedMinute visitor and learning analytics.">
+<link rel="stylesheet" href="assets/styles.css"></head><body><div class="company-announcement">MedMinute 4.3 introduces the redesigned professional Anatomy Explorer. <a href="impact.html">View Live Impact</a></div><header class="pro-header">
+<div class="container pro-nav">
+<a class="pro-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Medicine, explained with clarity.</span></div>
+</a>
+<button aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav class="pro-links"><a class="" href="impact.html">Impact</a><a class="" href="dashboard.html">Dashboard</a><a class="active" href="index.html">Home</a><a class="" href="learn.html">Learn</a><a class="" href="academy.html">Study</a><a class="" href="clinical-skills.html">Clinical</a><a class="" href="specialties.html">Careers</a><a class="" href="ai-tutor.html">AI Tutor</a><a class="" href="challenge.html">Challenge</a><a class="" href="founder.html">Founder</a></nav>
+<div class="pro-actions">
+<button aria-label="Search" class="icon-button" id="globalSearchButton">⌕</button>
+<button aria-label="Toggle dark mode" class="icon-button" id="themeToggle">◐</button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="search-overlay" id="searchOverlay">
+<div class="search-panel">
+<div class="search-panel-head">
+<div><span class="eyebrow">Global Search</span><h2>Search all of MedMinute</h2></div>
+<button aria-label="Close search" class="icon-button" id="closeSearch">×</button>
+</div>
+<input class="global-search-input" id="globalSearchInput" placeholder="Search articles, specialties, skills, cases and study resources..."/>
+<div class="global-search-results" id="globalSearchResults"></div>
+</div>
+</div>
+
+<main class="page-enter">
+<section class="page-hero company-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><strong>Live Impact</strong></div>
+    <div class="eyebrow">Live Platform Analytics</div>
+    <h1>MedMinute Impact Dashboard</h1>
+    <p>Anonymous, privacy-conscious usage statistics showing how learners engage with MedMinute.</p>
+    <div class="impact-live-status"><span class="live-dot"></span><strong id="impactUpdated">Connecting to live analytics…</strong></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div id="impactDashboardSkeleton" class="impact-skeleton-grid">
+      <div></div><div></div><div></div><div></div>
+    </div>
+    <div id="impactDashboardContent" hidden>
+      <div class="impact-metric-grid">
+        <article class="impact-metric primary"><span>Total visitors</span><strong id="impactVisitors">0</strong><small>Anonymous unique browsers</small></article>
+        <article class="impact-metric"><span>Active now</span><strong id="impactActive">0</strong><small>Seen in the last 5 minutes</small></article>
+        <article class="impact-metric"><span>Page views</span><strong id="impactPageViews">0</strong><small>Across the platform</small></article>
+        <article class="impact-metric"><span>Articles read</span><strong id="impactArticleReads">0</strong><small>Health-library engagement</small></article>
+        <article class="impact-metric"><span>AI Tutor uses</span><strong id="impactAIUses">0</strong><small>Generated learning activities</small></article>
+        <article class="impact-metric"><span>AI questions</span><strong id="impactAIQuestions">0</strong><small>Questions answered</small></article>
+        <article class="impact-metric"><span>Certificates earned</span><strong id="impactCertificates">0</strong><small>Verified completions</small></article>
+        <article class="impact-metric"><span>Quizzes completed</span><strong id="impactQuizzes">0</strong><small>Knowledge checks submitted</small></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container impact-two-column">
+    <article class="company-panel">
+      <div class="company-panel-head"><div><span class="eyebrow">Engagement</span><h2>Most-used resources</h2></div><span class="live-badge">Live</span></div>
+      <div id="impactTopPages" class="impact-ranking"><div class="premium-empty-state"><strong>No public usage yet.</strong><p>Popular resources will appear after the website is hosted and visited.</p></div></div>
+    </article>
+    <article class="company-panel">
+      <div class="company-panel-head"><div><span class="eyebrow">Activity</span><h2>Recent 14-day trend</h2></div></div>
+      <div id="impactTrend" class="impact-trend" aria-label="Daily platform activity"></div>
+      <p class="impact-privacy-note">No names, email addresses, precise locations, medical questions or uploaded images are shown on this dashboard.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container company-trust-grid">
+    <article><span>01</span><h3>Anonymous by design</h3><p>Visitors receive a random browser identifier. The public dashboard shows aggregate totals only.</p></article>
+    <article><span>02</span><h3>Updated automatically</h3><p>New visitors and learning events update the server-backed dashboard without manual editing.</p></article>
+    <article><span>03</span><h3>Impact you can document</h3><p>Use verified figures in annual reports, partnership proposals and university interviews.</p></article>
+  </div>
+</section>
+</main>
+<footer class="pro-footer">
+<div class="container">
+<div class="pro-footer-grid">
+<div>
+<a class="pro-brand footer-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Making medicine understandable.</span></div>
+</a>
+<p>A student-led medical education platform created in Qatar.</p>
+</div>
+<div><h3>Learn</h3><a href="health-library.html">Health Library</a><a href="anatomy.html">Interactive Anatomy</a><a href="dictionary.html">Medical Dictionary</a></div>
+<div><h3>Study</h3><a href="academy.html">Academy</a><a href="final-exams.html">Final Exams</a><a href="cases.html">Case Challenges</a></div>
+<div><h3>Explore</h3><a href="ai-tutor.html">MedMinute AI Tutor</a><a href="ai-assistant.html">MedMinute AI Q&amp;A</a><a href="specialties.html">Career Guides</a><a href="founder.html">Meet the Founder</a><a href="impact.html">Live Impact</a><a href="certificates.html">Certificates</a></div>
+</div>
+<div class="footer-line">
+<span>© 2026 MedMinute</span>
+<span>Educational content only. Not medical advice.</span>
+<a href="mailto:infomedminute@gmail.com">infomedminute@gmail.com</a>
+</div>
+</div>
+</footer>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+<div class="accessibility-launcher">
+<button aria-label="Open accessibility controls" id="accessibilityToggle">Aa</button>
+<div class="accessibility-panel" id="accessibilityPanel">
+<strong>Accessibility</strong>
+<button data-accessibility="font-down" type="button">Decrease text size</button>
+<button data-accessibility="font-up" type="button">Increase text size</button>
+<button data-accessibility="motion" type="button">Reduce animations</button>
+<button data-accessibility="contrast" type="button">High contrast</button>
+</div>
+</div>
+</body></html>

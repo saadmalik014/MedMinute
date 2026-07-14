@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Interactive Anatomy | MedMinute</title>
+<meta content="Detailed layered 3D-style human anatomy explorer." name="description"/>
+<link href="assets/styles.css" rel="stylesheet"/></head><body><div class="company-announcement">MedMinute 4.3 introduces the redesigned professional Anatomy Explorer. <a href="impact.html">View Live Impact</a></div><header class="pro-header">
+<div class="container pro-nav">
+<a class="pro-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Medicine, explained with clarity.</span></div>
+</a>
+<button aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav class="pro-links"><a class="" href="impact.html">Impact</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="index.html">Home</a><a class="active" href="learn.html">Learn</a><a class="" href="academy.html">Study</a><a class="" href="clinical-skills.html">Clinical</a><a class="" href="specialties.html">Careers</a><a class="" href="ai-tutor.html">AI Tutor</a><a class="" href="challenge.html">Challenge</a><a class="" href="founder.html">Founder</a></nav>
+<div class="pro-actions">
+<button aria-label="Search" class="icon-button" id="globalSearchButton">⌕</button>
+<button aria-label="Toggle dark mode" class="icon-button" id="themeToggle">◐</button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="search-overlay" id="searchOverlay">
+<div class="search-panel">
+<div class="search-panel-head">
+<div><span class="eyebrow">Global Search</span><h2>Search all of MedMinute</h2></div>
+<button aria-label="Close search" class="icon-button" id="closeSearch">×</button>
+</div>
+<input class="global-search-input" id="globalSearchInput" placeholder="Search articles, specialties, skills, cases and study resources..."/>
+<div class="global-search-results" id="globalSearchResults"></div>
+</div>
+</div>
+
+<main class="anatomy-studio-page page-enter">
+<section class="anatomy-studio-shell">
+  <aside class="anatomy-studio-sidebar">
+    <div class="anatomy-studio-brand">
+      <span class="eyebrow">MedMinute Atlas</span>
+      <h1>Anatomy Explorer</h1>
+      <p>Select a system or structure to explore.</p>
+    </div>
+    <label class="anatomy-search">
+      <span>⌕</span>
+      <input id="anatomySearchInput" placeholder="Search anatomy...">
+    </label>
+    <div class="anatomy-system-title">Body systems</div>
+    <nav class="anatomy-system-list">
+      <button class="anatomy-system-button active" data-system="all" data-organs='["brain", "eyes", "thyroid", "trachea", "lungs", "heart", "liver", "gallbladder", "stomach", "spleen", "pancreas", "kidneys", "small-intestine", "large-intestine", "bladder", "musculoskeletal"]' type="button"><span>◉</span><strong>All Systems</strong></button><button class="anatomy-system-button " data-system="skeletal" data-organs='["musculoskeletal"]' type="button"><span>骨</span><strong>Skeletal</strong></button><button class="anatomy-system-button " data-system="muscular" data-organs='["musculoskeletal"]' type="button"><span>M</span><strong>Muscular</strong></button><button class="anatomy-system-button " data-system="circulatory" data-organs='["heart"]' type="button"><span>♥</span><strong>Circulatory</strong></button><button class="anatomy-system-button " data-system="nervous" data-organs='["brain", "eyes"]' type="button"><span>✦</span><strong>Nervous</strong></button><button class="anatomy-system-button " data-system="respiratory" data-organs='["trachea", "lungs"]' type="button"><span>◌</span><strong>Respiratory</strong></button><button class="anatomy-system-button " data-system="digestive" data-organs='["liver", "gallbladder", "stomach", "spleen", "pancreas", "small-intestine", "large-intestine"]' type="button"><span>S</span><strong>Digestive</strong></button><button class="anatomy-system-button " data-system="endocrine" data-organs='["thyroid", "pancreas"]' type="button"><span>E</span><strong>Endocrine</strong></button><button class="anatomy-system-button " data-system="urinary" data-organs='["kidneys", "bladder"]' type="button"><span>U</span><strong>Urinary</strong></button><button class="anatomy-system-button " data-system="integumentary" data-organs='[]' type="button"><span>I</span><strong>Integumentary</strong></button>
+    </nav>
+    <div class="anatomy-progress-card">
+      <span>Your anatomy progress</span>
+      <strong id="anatomyStructuresViewed">0 structures explored</strong>
+      <div class="progress-track"><span id="anatomyProgressBar" style="width:0%"></span></div>
+      <a href="dashboard.html">Open learning dashboard →</a>
+    </div>
+  </aside>
+
+  <section class="anatomy-main-stage">
+    <div class="anatomy-studio-topbar">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="learn.html">Learn</a><span>›</span><strong>Anatomy Explorer</strong></div>
+      <div class="anatomy-top-actions">
+        <button id="anatomyTourButton" type="button">▶ Guided tour</button>
+        <button id="anatomyHelpButton" type="button">? Help</button>
+      </div>
+    </div>
+    <div class="anatomy-stage-heading">
+      <div><h2>Interactive Human Anatomy</h2><p>Explore a custom, layered educational model of the human body.</p></div>
+      <span>Detailed anterior view</span>
+    </div>
+
+    <div class="anatomy-model-workspace">
+      <div class="anatomy-layer-panel">
+        <span>Visual layers</span>
+        <button class="studio-layer active" data-layer="organs" type="button">Organs</button>
+        <button class="studio-layer" data-layer="muscles" type="button">Muscular</button>
+        <button class="studio-layer" data-layer="skeleton" type="button">Skeletal</button>
+        <button class="studio-layer" data-layer="exterior" type="button">Exterior</button>
+      </div>
+      <div id="studioModelViewport" class="studio-model-viewport">
+        <div id="humanModel" class="human-model studio-human-model"><svg aria-label="Detailed interactive anterior human anatomy model" role="img" viewbox="0 0 520 920">
+<defs>
+<lineargradient id="skin3d" x1="0" x2="1"><stop offset="0" stop-color="#e8b797"></stop><stop offset=".45" stop-color="#f5cfb2"></stop><stop offset="1" stop-color="#c88c70"></stop></lineargradient>
+<lineargradient id="lung3d" x1="0" x2="1"><stop stop-color="#bad7e8"></stop><stop offset=".5" stop-color="#85b8d6"></stop><stop offset="1" stop-color="#5c91b2"></stop></lineargradient>
+<lineargradient id="heart3d"><stop stop-color="#d94c56"></stop><stop offset="1" stop-color="#8f172a"></stop></lineargradient>
+<filter id="organShadow"><fedropshadow dx="7" dy="8" flood-opacity=".28" stddeviation="8"></fedropshadow></filter>
+</defs>
+<!-- detailed human exterior -->
+<g class="body-shell">
+  <!-- hair and head -->
+  <path d="M194 73 C194 18 231 -9 270 1 C311 0 333 36 326 84 C321 59 307 37 286 28 C253 14 216 31 203 62 C199 70 197 79 197 91Z" fill="#332821"></path>
+  <path d="M205 52 C216 22 249 12 278 22 C308 32 322 58 316 99 C312 129 292 151 260 153 C227 151 207 129 203 98 C200 82 201 65 205 52Z" fill="url(#skin3d)"></path>
+  <!-- ears -->
+  <path d="M205 77 C185 70 183 111 207 115Z" fill="#dca587"></path>
+  <path d="M315 77 C335 70 337 111 313 115Z" fill="#c98d70"></path>
+  <!-- facial structure -->
+  <path d="M226 70 Q238 63 249 70" fill="none" stroke="#5a4035" stroke-width="4" stroke-linecap="round"></path>
+  <path d="M271 70 Q283 63 295 70" fill="none" stroke="#5a4035" stroke-width="4" stroke-linecap="round"></path>
+  <path d="M260 72 C254 90 251 102 260 107 C267 109 273 106 276 103" fill="none" stroke="#b87962" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M240 123 Q260 135 281 122" fill="none" stroke="#985f58" stroke-width="3" stroke-linecap="round"></path>
+  <path d="M235 139 Q260 149 286 138" fill="none" stroke="#c28e78" stroke-width="2"></path>
+  <!-- neck -->
+  <path d="M229 139 C231 164 222 174 205 184 L315 184 C298 174 289 164 291 139Z" fill="url(#skin3d)"></path>
+  <!-- torso with shoulders and natural waist -->
+  <path d="M205 174 C174 177 139 195 122 226 C108 254 105 301 111 353
+           L132 488 C137 517 159 515 166 489 L172 383
+           C177 431 181 477 179 519 C177 572 164 651 158 715
+           L143 861 C140 888 154 909 183 910 L207 910
+           C226 910 236 899 239 880 L251 667
+           C252 647 255 632 260 621 C265 632 268 647 269 667
+           L281 880 C284 899 294 910 313 910 L337 910
+           C366 909 380 888 377 861 L362 715
+           C356 651 343 572 341 519 C339 477 343 431 348 383
+           L354 489 C361 515 383 517 388 488 L409 353
+           C415 301 412 254 398 226 C381 195 346 177 315 174
+           C300 192 281 201 260 202 C239 201 220 192 205 174Z" fill="url(#skin3d)"></path>
+  <!-- pectoral and abdominal contours -->
+  <path d="M205 221 Q232 208 257 224 M315 221 Q288 208 263 224" fill="none" stroke="#d49b7e" stroke-width="3" opacity=".7"></path>
+  <path d="M260 224 L260 510" stroke="#d39a7d" stroke-width="2.5" opacity=".6"></path>
+  <path d="M229 327 Q260 339 291 327 M226 391 Q260 402 294 391 M224 454 Q260 464 296 454" fill="none" stroke="#d49b7e" stroke-width="2.5" opacity=".55"></path>
+  <ellipse cx="260" cy="492" rx="5" ry="7" fill="#b87861" opacity=".75"></ellipse>
+  <!-- clavicles -->
+  <path d="M211 191 Q235 207 258 207 M309 191 Q285 207 262 207" fill="none" stroke="#c78d72" stroke-width="3" opacity=".7"></path>
+  <!-- hands -->
+  <path d="M125 474 C111 492 106 519 113 543 C117 556 126 552 128 541 C128 560 137 561 140 545 C141 559 150 557 151 541 C154 550 162 543 159 529 L151 493Z" fill="url(#skin3d)"></path>
+  <path d="M395 474 C409 492 414 519 407 543 C403 556 394 552 392 541 C392 560 383 561 380 545 C379 559 370 557 369 541 C366 550 358 543 361 529 L369 493Z" fill="url(#skin3d)"></path>
+  <!-- feet -->
+  <path d="M143 858 C130 883 129 910 151 918 L218 918 C224 905 216 893 204 888Z" fill="url(#skin3d)"></path>
+  <path d="M377 858 C390 883 391 910 369 918 L302 918 C296 905 304 893 316 888Z" fill="url(#skin3d)"></path>
+</g>
+<!-- skeleton layer -->
+<g class="anatomy-visual-layer skeleton-layer">
+  <g class="organ-button" data-organ="musculoskeletal">
+    <!-- skull -->
+    <path d="M215 48 C223 21 246 12 270 18 C298 25 312 48 306 79 C303 99 292 118 277 127 L276 145 L244 145 L243 127 C225 117 214 95 213 72 C212 62 213 54 215 48Z" fill="#f1ead7" stroke="#c9bea6" stroke-width="3"></path>
+    <path d="M229 77 Q240 68 250 78 M270 78 Q281 68 292 77" fill="none" stroke="#9f9581" stroke-width="3"></path>
+    <path d="M249 105 Q260 111 272 105 M244 126 L276 126" fill="none" stroke="#9f9581" stroke-width="2.5"></path>
+    <!-- vertebral column -->
+    <path d="M260 146 C254 206 266 246 259 300 C251 360 270 416 258 479 C251 520 258 566 260 618" fill="none" stroke="#eee5d0" stroke-width="13" stroke-linecap="round"></path>
+    <path d="M260 154V613" stroke="#b9ad94" stroke-width="2" stroke-dasharray="8 7"></path>
+    <!-- clavicles and scapular line -->
+    <path d="M258 183 C231 177 211 185 191 202 M262 183 C289 177 309 185 329 202" fill="none" stroke="#eee5d0" stroke-width="9" stroke-linecap="round"></path>
+    <!-- rib cage -->
+    <path d="M259 205 C224 190 194 220 190 271 C187 329 214 386 259 402 C304 386 333 329 330 271 C326 220 296 190 261 205Z" fill="none" stroke="#eee5d0" stroke-width="8"></path>
+    <g fill="none" stroke="#d9cfba" stroke-width="5">
+      <path d="M254 225 C220 215 202 232 198 253 M266 225 C300 215 318 232 322 253"></path>
+      <path d="M254 249 C218 238 198 258 197 281 M266 249 C302 238 322 258 323 281"></path>
+      <path d="M254 274 C218 263 197 285 199 308 M266 274 C302 263 323 285 321 308"></path>
+      <path d="M254 300 C220 290 202 311 205 334 M266 300 C300 290 318 311 315 334"></path>
+      <path d="M254 326 C224 318 210 337 214 357 M266 326 C296 318 310 337 306 357"></path>
+    </g>
+    <path d="M260 202V365" stroke="#eee5d0" stroke-width="9"></path>
+    <!-- arms -->
+    <path d="M191 202 L159 338 L140 482 M329 202 L361 338 L380 482" fill="none" stroke="#eee5d0" stroke-width="13" stroke-linecap="round"></path>
+    <circle cx="159" cy="338" r="11" fill="#e8dfca"></circle><circle cx="361" cy="338" r="11" fill="#e8dfca"></circle>
+    <!-- hands -->
+    <path d="M140 482 L126 523 M140 484 L135 531 M142 484 L145 531 M144 484 L155 526" fill="none" stroke="#eee5d0" stroke-width="5" stroke-linecap="round"></path>
+    <path d="M380 482 L394 523 M380 484 L385 531 M378 484 L375 531 M376 484 L365 526" fill="none" stroke="#eee5d0" stroke-width="5" stroke-linecap="round"></path>
+    <!-- pelvis -->
+    <path d="M205 470 C218 438 238 437 260 462 C282 437 302 438 315 470 C323 499 306 537 278 552 L260 527 L242 552 C214 537 197 499 205 470Z" fill="#eee5d0" stroke="#c9bea6" stroke-width="3"></path>
+    <path d="M225 484 Q260 505 295 484" fill="none" stroke="#b9ad94" stroke-width="4"></path>
+    <!-- legs -->
+    <path d="M242 543 L207 707 L190 875 M278 543 L313 707 L330 875" fill="none" stroke="#eee5d0" stroke-width="16" stroke-linecap="round"></path>
+    <circle cx="207" cy="707" r="14" fill="#e8dfca"></circle><circle cx="313" cy="707" r="14" fill="#e8dfca"></circle>
+    <!-- feet -->
+    <path d="M190 875 Q171 899 145 907 M330 875 Q349 899 375 907" fill="none" stroke="#eee5d0" stroke-width="13" stroke-linecap="round"></path>
+  </g>
+</g>
+<!-- muscle layer -->
+<g class="anatomy-visual-layer muscles-layer">
+  <g class="organ-button" data-organ="musculoskeletal" opacity=".94">
+    <!-- neck -->
+    <path d="M228 145 L258 202 L244 215 L209 178Z" fill="#9d3737"></path>
+    <path d="M292 145 L262 202 L276 215 L311 178Z" fill="#8e3032"></path>
+    <!-- deltoids -->
+    <path d="M204 181 C170 181 145 207 150 250 C166 261 184 251 196 231Z" fill="#b84a43"></path>
+    <path d="M316 181 C350 181 375 207 370 250 C354 261 336 251 324 231Z" fill="#a93e3b"></path>
+    <!-- pectorals -->
+    <path d="M204 205 C224 192 249 197 258 219 L252 295 C225 304 196 286 188 246Z" fill="#c55b50"></path>
+    <path d="M316 205 C296 192 271 197 262 219 L268 295 C295 304 324 286 332 246Z" fill="#b94a47"></path>
+    <!-- biceps and forearms -->
+    <path d="M153 245 C136 278 137 336 157 359 C177 340 182 286 172 249Z" fill="#bd5148"></path>
+    <path d="M367 245 C384 278 383 336 363 359 C343 340 338 286 348 249Z" fill="#a9433f"></path>
+    <path d="M155 357 C137 389 125 456 139 493 C159 468 173 408 172 366Z" fill="#ae433f"></path>
+    <path d="M365 357 C383 389 395 456 381 493 C361 468 347 408 348 366Z" fill="#9d3937"></path>
+    <!-- abdominal wall -->
+    <path d="M207 294 L252 301 L252 500 L210 482 C196 417 197 350 207 294Z" fill="#bd5148"></path>
+    <path d="M313 294 L268 301 L268 500 L310 482 C324 417 323 350 313 294Z" fill="#ae413f"></path>
+    <g fill="none" stroke="#8d302f" stroke-width="3" opacity=".8">
+      <path d="M215 342 Q235 350 252 345 M268 345 Q286 350 305 342"></path>
+      <path d="M211 397 Q233 405 252 400 M268 400 Q288 405 309 397"></path>
+      <path d="M211 451 Q232 458 252 454 M268 454 Q289 458 309 451"></path>
+    </g>
+    <!-- obliques -->
+    <path d="M181 301 C188 365 184 434 207 493 L231 475 L207 297Z" fill="#a33b3a"></path>
+    <path d="M339 301 C332 365 336 434 313 493 L289 475 L313 297Z" fill="#943332"></path>
+    <!-- thighs -->
+    <path d="M205 515 C180 563 173 660 202 710 C228 677 241 589 244 530Z" fill="#bd5148"></path>
+    <path d="M315 515 C340 563 347 660 318 710 C292 677 279 589 276 530Z" fill="#a84340"></path>
+    <path d="M245 530 C234 597 223 674 207 710 L246 703 L258 550Z" fill="#cf6658"></path>
+    <path d="M275 530 C286 597 297 674 313 710 L274 703 L262 550Z" fill="#b95049"></path>
+    <!-- lower legs -->
+    <path d="M202 716 C184 755 177 843 191 879 C213 848 225 760 216 718Z" fill="#a83d3a"></path>
+    <path d="M318 716 C336 755 343 843 329 879 C307 848 295 760 304 718Z" fill="#963331"></path>
+  </g>
+</g>
+<!-- organ layer -->
+<g class="anatomy-visual-layer muscles-layer">
+<g class="organ-button" data-organ="musculoskeletal" opacity=".82">
+<path d="M190 175 C150 210 147 325 176 405 L208 387 L220 190Z" fill="#b74c45"></path>
+<path d="M330 175 C370 210 373 325 344 405 L312 387 L300 190Z" fill="#a83e3a"></path>
+<path d="M221 175 L258 210 L250 438 L185 415Z" fill="#c15c51"></path>
+<path d="M299 175 L262 210 L270 438 L335 415Z" fill="#b94a46"></path>
+<path d="M188 508 L244 522 L217 874 L161 874Z" fill="#bd504a"></path>
+<path d="M332 508 L276 522 L303 874 L359 874Z" fill="#aa413e"></path>
+</g>
+</g>
+<!-- organ layer -->
+<g class="anatomy-visual-layer organs-layer" filter="url(#organShadow)">
+<g class="organ-button active" data-organ="brain"><path d="M219 62 C219 28 252 20 264 39 C283 18 311 37 303 63 C326 77 306 111 285 103 C271 122 243 114 241 100 C215 108 202 79 219 62Z" fill="#c987a3"></path></g>
+<g class="organ-button" data-organ="eyes"><ellipse cx="237" cy="79" fill="#f8fafc" rx="8" ry="5"></ellipse><ellipse cx="283" cy="79" fill="#f8fafc" rx="8" ry="5"></ellipse><circle cx="237" cy="79" fill="#31526e" r="3"></circle><circle cx="283" cy="79" fill="#31526e" r="3"></circle></g>
+<g class="organ-button" data-organ="thyroid"><path d="M240 158 C247 146 255 151 260 166 C265 151 273 146 280 158 C285 176 273 186 260 177 C247 186 235 176 240 158Z" fill="#c75f85"></path></g>
+<g class="organ-button" data-organ="trachea"><path d="M260 178V260" stroke="#b7d6df" stroke-linecap="round" stroke-width="15"></path><path d="M260 245L225 278M260 245L295 278" stroke="#b7d6df" stroke-width="10"></path></g>
+<g class="organ-button" data-organ="lungs"><path d="M244 235 C190 220 172 266 178 350 C183 405 218 419 247 383 L251 268Z" fill="url(#lung3d)"></path><path d="M276 235 C330 220 348 266 342 350 C337 405 302 419 273 383 L269 268Z" fill="url(#lung3d)"></path></g>
+<g class="organ-button" data-organ="heart"><path d="M259 319 C231 286 196 329 259 397 C322 329 287 286 259 319Z" fill="url(#heart3d)"></path></g>
+<g class="organ-button" data-organ="liver"><path d="M203 412 C246 384 329 397 343 432 C321 479 250 478 201 451Z" fill="#8f493f"></path></g>
+<g class="organ-button" data-organ="gallbladder"><path d="M301 448 C314 443 322 456 315 475 C309 487 296 481 298 467Z" fill="#4c9b62"></path></g>
+<g class="organ-button" data-organ="stomach"><path d="M275 455 C325 427 343 470 320 517 C300 550 252 535 257 497 C259 479 267 469 275 455Z" fill="#d89974"></path></g>
+<g class="organ-button" data-organ="spleen"><ellipse cx="344" cy="470" fill="#874765" rx="20" ry="38"></ellipse></g>
+<g class="organ-button" data-organ="pancreas"><path d="M224 522 C261 503 310 505 329 518 C296 535 255 537 224 522Z" fill="#e6b55f"></path></g>
+<g class="organ-button" data-organ="kidneys"><path d="M202 505 C177 507 174 551 196 570 C218 584 233 552 224 527 C219 512 211 506 202 505Z" fill="#8e3f48"></path><path d="M318 505 C343 507 346 551 324 570 C302 584 287 552 296 527 C301 512 309 506 318 505Z" fill="#8e3f48"></path></g>
+<g class="organ-button" data-organ="small-intestine"><path d="M215 565 C320 545 340 655 270 675 C195 696 172 604 235 585 C295 568 323 628 270 647 C218 666 197 616 235 603" fill="none" stroke="#d89c79" stroke-linecap="round" stroke-width="18"></path></g>
+<g class="organ-button" data-organ="large-intestine"><path d="M201 552 C178 580 178 680 205 706 L313 706 C343 677 343 580 319 552 M205 552L319 552" fill="none" stroke="#ad735d" stroke-linecap="round" stroke-width="18"></path></g>
+<g class="organ-button" data-organ="bladder"><ellipse cx="260" cy="716" fill="#dfb47c" rx="32" ry="28"></ellipse></g>
+</g>
+</svg></div>
+        <div class="anatomy-floating-controls">
+          <button id="studioRotateLeft" type="button">↶</button>
+          <button id="studioZoomOut" type="button">−</button>
+          <button id="studioResetModel" type="button">Reset</button>
+          <button id="studioZoomIn" type="button">+</button>
+          <button id="studioRotateRight" type="button">↷</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="anatomy-region-section">
+      <div><strong>Explore by region</strong><span>Focus the model on a body area</span></div>
+      <div class="anatomy-region-grid">
+        <button data-region="head" data-organ="brain" type="button"><span class="region-illustration head"></span><strong>Head & Neck</strong><small>Head, neck and sensory structures</small></button><button data-region="thorax" data-organ="heart" type="button"><span class="region-illustration thorax"></span><strong>Thorax</strong><small>Heart, lungs and central airways</small></button><button data-region="abdomen" data-organ="liver" type="button"><span class="region-illustration abdomen"></span><strong>Abdomen</strong><small>Digestive and metabolic organs</small></button><button data-region="pelvis" data-organ="bladder" type="button"><span class="region-illustration pelvis"></span><strong>Pelvis</strong><small>Urinary and pelvic structures</small></button><button data-region="upper" data-organ="musculoskeletal" type="button"><span class="region-illustration upper"></span><strong>Upper Limbs</strong><small>Shoulder, arm, forearm and hand</small></button><button data-region="lower" data-organ="musculoskeletal" type="button"><span class="region-illustration lower"></span><strong>Lower Limbs</strong><small>Hip, thigh, leg and foot</small></button>
+      </div>
+    </section>
+
+    <div class="anatomy-quality-strip">
+      <article><span>✓</span><div><strong>Original educational model</strong><small>Created for MedMinute</small></div></article>
+      <article><span>↻</span><div><strong>Interactive layers</strong><small>Zoom, rotate and isolate</small></div></article>
+      <article><span>＋</span><div><strong>Clinical connections</strong><small>Linked to diseases and tests</small></div></article>
+    </div>
+  </section>
+
+  <aside class="anatomy-structure-panel">
+    <div class="anatomy-selected-label">Selected structure</div>
+    <div class="anatomy-structure-header">
+      <div><h2 id="studioStructureTitle">Heart</h2><span id="studioStructureSpecialty">Cardiology</span></div>
+      <div id="studioStructureIcon" class="structure-icon heart-icon">♥</div>
+    </div>
+    <section>
+      <h3>Overview</h3>
+      <p id="studioStructureDescription">Pumps blood through pulmonary and systemic circulation using four chambers and coordinated electrical activity.</p>
+    </section>
+    <section>
+      <h3>Key functions</h3>
+      <ul id="studioStructureFunctions" class="anatomy-function-list"><li>Pumps blood through the body</li><li>Maintains pressure and circulation</li><li>Delivers oxygen and nutrients</li><li>Supports waste-product removal</li></ul>
+    </section>
+    <section>
+      <h3>Clinical skills and tests</h3>
+      <div id="studioStructureSkills" class="anatomy-topic-pills"><span>Blood pressure</span><span>ECG</span><span>Echocardiography</span></div>
+    </section>
+    <section>
+      <h3>Common conditions</h3>
+      <ul id="studioStructureConditions" class="anatomy-condition-list"><li>Coronary artery disease</li><li>Heart failure</li><li>Arrhythmia</li><li>Valve disease</li></ul>
+    </section>
+    <section>
+      <h3>Related MedMinute learning</h3>
+      <div id="studioStructureLinks" class="anatomy-related-links"><a href="heart-attack.html">Heart Attack</a><a href="heart-failure.html">Heart Failure</a><a href="atrial-fibrillation.html">Atrial Fibrillation</a><a href="hypertension.html">Hypertension</a></div>
+    </section>
+    <button id="studioAskTutor" class="btn btn-primary anatomy-tutor-button" type="button">Ask the AI Tutor about this structure</button>
+  </aside>
+</section>
+<script id="anatomyStructureData" type="application/json">{"brain": {"title": "Brain", "specialty": "Neurology", "description": "Controls movement, sensation, language, memory, emotion and many automatic functions.", "resources": [{"label": "Stroke", "url": "stroke.html"}, {"label": "Epilepsy", "url": "epilepsy.html"}, {"label": "Migraine", "url": "migraine.html"}, {"label": "Brain Aneurysm", "url": "brain-aneurysm.html"}], "skills": ["Neurological examination", "EEG", "CT and MRI"], "functions": ["Integrates sensation and movement", "Supports memory, language and emotion", "Coordinates autonomic and endocrine control"], "conditions": ["Stroke", "Epilepsy", "Migraine", "Brain aneurysm"]}, "eyes": {"title": "Eyes", "specialty": "Ophthalmology", "description": "Convert light into neural signals and provide vision through the retina, optic nerve and visual pathways.", "resources": [], "skills": ["Visual acuity testing", "Fundoscopy", "Retinal imaging"], "functions": ["Focuses light onto the retina", "Converts light into neural signals", "Supports depth, color and motion perception"], "conditions": ["Cataract", "Glaucoma", "Retinal disease"]}, "thyroid": {"title": "Thyroid Gland", "specialty": "Endocrinology", "description": "Produces hormones that influence metabolism, temperature, energy, heart rate and development.", "resources": [{"label": "Thyroid Overview", "url": "the-thyroid-gland-why-one-small-organ-can-affect-your-entire-life.html"}, {"label": "Hashimoto's Disease", "url": "hashimoto-s-disease.html"}, {"label": "Graves' Disease", "url": "graves-disease.html"}], "skills": ["TSH and free T4", "Thyroid ultrasound", "Thyroid examination"], "functions": ["Produces T4 and T3", "Regulates metabolic activity", "Influences temperature, heart rate and development"], "conditions": ["Hypothyroidism", "Hashimoto's disease", "Graves' disease"]}, "trachea": {"title": "Trachea and Major Airways", "specialty": "Pulmonology / ENT", "description": "Conduct air between the throat and lungs while cartilage rings help keep the airway open.", "resources": [{"label": "Asthma", "url": "asthma.html"}, {"label": "COPD", "url": "chronic-obstructive-pulmonary-disease.html"}], "skills": ["Airway assessment", "Bronchoscopy", "Peak flow"], "functions": ["Conducts air to the lungs", "Remains open through cartilage support", "Filters and clears inhaled particles"], "conditions": ["Airway obstruction", "Tracheitis", "Asthma-related airflow limitation"]}, "lungs": {"title": "Lungs", "specialty": "Pulmonology", "description": "Exchange oxygen and carbon dioxide across millions of alveoli.", "resources": [{"label": "Asthma", "url": "asthma.html"}, {"label": "Pneumonia", "url": "pneumonia.html"}, {"label": "COPD", "url": "chronic-obstructive-pulmonary-disease.html"}, {"label": "Sleep Apnea", "url": "obstructive-sleep-apnea.html"}], "skills": ["Respiratory rate", "Pulse oximetry", "Spirometry"], "functions": ["Exchanges oxygen and carbon dioxide", "Supports acid–base balance", "Works with circulation during exercise"], "conditions": ["Asthma", "Pneumonia", "COPD", "Sleep apnea"]}, "heart": {"title": "Heart", "specialty": "Cardiology", "description": "Pumps blood through pulmonary and systemic circulation using four chambers and coordinated electrical activity.", "resources": [{"label": "Heart Attack", "url": "heart-attack.html"}, {"label": "Heart Failure", "url": "heart-failure.html"}, {"label": "Atrial Fibrillation", "url": "atrial-fibrillation.html"}, {"label": "Hypertension", "url": "hypertension.html"}], "skills": ["Blood pressure", "ECG", "Echocardiography"], "functions": ["Pumps blood through the body", "Maintains pressure and circulation", "Delivers oxygen and nutrients", "Supports waste-product removal"], "conditions": ["Coronary artery disease", "Heart failure", "Arrhythmia", "Valve disease"]}, "liver": {"title": "Liver", "specialty": "Gastroenterology / Hepatology", "description": "Processes nutrients, produces bile and proteins, stores energy and helps detoxify substances.", "resources": [{"label": "Gallstones", "url": "gallstones.html"}], "skills": ["Liver blood tests", "Ultrasound", "Abdominal examination"], "functions": ["Processes nutrients", "Produces bile and plasma proteins", "Stores energy and detoxifies substances"], "conditions": ["Fatty liver disease", "Hepatitis", "Cirrhosis"]}, "gallbladder": {"title": "Gallbladder", "specialty": "General Surgery / Gastroenterology", "description": "Stores and concentrates bile before releasing it into the small intestine.", "resources": [{"label": "Gallstones", "url": "gallstones.html"}], "skills": ["Ultrasound", "Murphy sign assessment", "Liver chemistry"], "functions": ["Stores bile", "Concentrates bile", "Releases bile after meals"], "conditions": ["Gallstones", "Cholecystitis"]}, "stomach": {"title": "Stomach", "specialty": "Gastroenterology", "description": "Temporarily stores food and begins mechanical and chemical digestion using acid and enzymes.", "resources": [{"label": "GERD", "url": "gerd.html"}, {"label": "Peptic Ulcer Disease", "url": "peptic-ulcer-disease.html"}], "skills": ["Endoscopy", "Abdominal examination", "H. pylori testing"], "functions": ["Stores food", "Mixes food mechanically", "Begins protein digestion"], "conditions": ["GERD", "Gastritis", "Peptic ulcer disease"]}, "spleen": {"title": "Spleen", "specialty": "Hematology / General Surgery", "description": "Filters blood, supports immune responses and removes aging red blood cells.", "resources": [], "skills": ["Abdominal examination", "Blood count", "Ultrasound"], "functions": ["Filters blood", "Removes aging red cells", "Supports immune responses"], "conditions": ["Splenomegaly", "Splenic injury"]}, "pancreas": {"title": "Pancreas", "specialty": "Endocrinology / Gastroenterology", "description": "Produces digestive enzymes and hormones including insulin and glucagon.", "resources": [{"label": "Type 1 Diabetes", "url": "type-1-diabetes.html"}, {"label": "Type 2 Diabetes", "url": "type-2-diabetes.html"}], "skills": ["Blood glucose", "HbA1c", "Pancreatic imaging"], "functions": ["Produces digestive enzymes", "Releases insulin and glucagon", "Regulates blood glucose"], "conditions": ["Type 1 diabetes", "Type 2 diabetes", "Pancreatitis"]}, "kidneys": {"title": "Kidneys", "specialty": "Nephrology", "description": "Filter blood, regulate fluid and electrolytes, contribute to blood-pressure control and produce hormones.", "resources": [{"label": "Chronic Kidney Disease", "url": "chronic-kidney-disease.html"}, {"label": "Urinary Tract Infection", "url": "urinary-tract-infection.html"}], "skills": ["Urinalysis", "eGFR and creatinine", "Fluid balance"], "functions": ["Filters blood and forms urine", "Regulates fluid and electrolytes", "Contributes to pressure and red-cell control"], "conditions": ["Chronic kidney disease", "Kidney stones", "Acute kidney injury"]}, "small-intestine": {"title": "Small Intestine", "specialty": "Gastroenterology", "description": "Completes much of digestion and absorbs most nutrients through villi and microvilli.", "resources": [{"label": "Celiac Disease", "url": "celiac-disease.html"}, {"label": "Inflammatory Bowel Disease", "url": "inflammatory-bowel-disease.html"}], "skills": ["Endoscopy", "Nutritional testing", "Abdominal imaging"], "functions": ["Completes digestion", "Absorbs nutrients", "Supports immune and microbial functions"], "conditions": ["Celiac disease", "Crohn's disease", "Malabsorption"]}, "large-intestine": {"title": "Large Intestine", "specialty": "Gastroenterology", "description": "Absorbs water and electrolytes and forms stool while housing a complex microbial community.", "resources": [{"label": "Inflammatory Bowel Disease", "url": "inflammatory-bowel-disease.html"}, {"label": "Appendicitis", "url": "appendicitis.html"}], "skills": ["Colonoscopy", "Stool testing", "Abdominal examination"], "functions": ["Absorbs water and electrolytes", "Forms and stores stool", "Supports the gut microbiome"], "conditions": ["Ulcerative colitis", "Diverticular disease", "Colorectal cancer"]}, "bladder": {"title": "Urinary Bladder", "specialty": "Urology", "description": "Stores urine until coordinated muscle and nerve activity allow urination.", "resources": [{"label": "Urinary Tract Infection", "url": "urinary-tract-infection.html"}], "skills": ["Urinalysis", "Bladder scan", "Fluid balance"], "functions": ["Stores urine", "Coordinates controlled emptying", "Works with pelvic nerves and muscles"], "conditions": ["Urinary tract infection", "Overactive bladder"]}, "musculoskeletal": {"title": "Musculoskeletal System", "specialty": "Orthopedics / Rheumatology", "description": "Bones provide support and protection; muscles and joints produce movement.", "resources": [{"label": "Bone Fracture", "url": "bone-fracture.html"}, {"label": "Osteoarthritis", "url": "osteoarthritis.html"}, {"label": "Rheumatoid Arthritis", "url": "rheumatoid-arthritis.html"}], "skills": ["X-ray", "Joint examination", "Splinting"], "functions": ["Supports and protects the body", "Produces movement", "Stores minerals and supports blood-cell formation"], "conditions": ["Fracture", "Osteoarthritis", "Rheumatoid arthritis"]}}</script>
+</main>
+<footer class="pro-footer">
+<div class="container">
+<div class="pro-footer-grid">
+<div>
+<a class="pro-brand footer-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Making medicine understandable.</span></div>
+</a>
+<p>A student-led medical education platform created in Qatar.</p>
+</div>
+<div><h3>Learn</h3><a href="health-library.html">Health Library</a><a href="anatomy.html">Interactive Anatomy</a><a href="dictionary.html">Medical Dictionary</a></div>
+<div><h3>Study</h3><a href="academy.html">Academy</a><a href="final-exams.html">Final Exams</a><a href="cases.html">Case Challenges</a></div>
+<div><h3>Explore</h3><a href="ai-tutor.html">MedMinute AI Tutor</a><a href="ai-assistant.html">MedMinute AI Q&amp;A</a><a href="specialties.html">Career Guides</a><a href="founder.html">Meet the Founder</a><a href="impact.html">Live Impact</a><a href="certificates.html">Certificates</a></div>
+</div>
+<div class="footer-line">
+<span>© 2026 MedMinute</span>
+<span>Educational content only. Not medical advice.</span>
+<a href="mailto:infomedminute@gmail.com">infomedminute@gmail.com</a>
+</div>
+</div>
+</footer>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+<div class="accessibility-launcher">
+<button aria-label="Open accessibility controls" id="accessibilityToggle">Aa</button>
+<div class="accessibility-panel" id="accessibilityPanel">
+<strong>Accessibility</strong>
+<button data-accessibility="font-down" type="button">Decrease text size</button>
+<button data-accessibility="font-up" type="button">Increase text size</button>
+<button data-accessibility="motion" type="button">Reduce animations</button>
+<button data-accessibility="contrast" type="button">High contrast</button>
+</div>
+</div>
+</body></html>

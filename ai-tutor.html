@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>MedMinute AI Tutor | MedMinute</title>
+<meta content="Personalized AI tutoring grounded in MedMinute content." name="description"/>
+<link href="assets/styles.css" rel="stylesheet"/></head><body>
+<div class="company-announcement">MedMinute 4.3 introduces the redesigned professional Anatomy Explorer. <a href="impact.html">View Live Impact</a></div><header class="pro-header">
+<div class="container pro-nav">
+<a class="pro-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Medicine, explained with clarity.</span></div>
+</a>
+<button aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav class="pro-links"><a class="" href="impact.html">Impact</a><a class="" href="dashboard.html">Dashboard</a><a class="" href="index.html">Home</a><a class="" href="learn.html">Learn</a><a class="" href="academy.html">Study</a><a class="" href="clinical-skills.html">Clinical</a><a class="" href="specialties.html">Careers</a><a class="active" href="ai-tutor.html">AI Tutor</a><a class="" href="challenge.html">Challenge</a><a class="" href="founder.html">Founder</a></nav>
+<div class="pro-actions">
+<button aria-label="Search" class="icon-button" id="globalSearchButton">⌕</button>
+<button aria-label="Toggle dark mode" class="icon-button" id="themeToggle">◐</button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="search-overlay" id="searchOverlay">
+<div class="search-panel">
+<div class="search-panel-head">
+<div><span class="eyebrow">Global Search</span><h2>Search all of MedMinute</h2></div>
+<button aria-label="Close search" class="icon-button" id="closeSearch">×</button>
+</div>
+<input class="global-search-input" id="globalSearchInput" placeholder="Search articles, specialties, skills, cases and study resources..."/>
+<div class="global-search-results" id="globalSearchResults"></div>
+</div>
+</div>
+<main class="page-enter">
+<section class="page-hero tutor-hero">
+<div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="ai-tutor.html">AI Tutor</a><span>›</span><strong>MedMinute AI Tutor</strong></div>
+<div class="eyebrow">Personalized Learning</div>
+<h1>MedMinute AI Tutor</h1><div class="page-status-meta"><span>1 min estimated</span><span>Last updated July 15, 2026</span></div>
+<p>Learn a topic, test yourself, generate flashcards and receive lesson recommendations based on your progress.</p>
+<div class="ai-safety-row">
+<span class="ai-safety-chip">Grounded in MedMinute</span>
+<span class="ai-safety-chip">Session memory</span>
+<span class="ai-safety-chip">Mastery tracking</span>
+<span class="ai-safety-chip">Alberta curriculum support</span>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container tutor-dashboard">
+<aside class="tutor-control-panel">
+<div class="card">
+<span class="eyebrow">Choose a mode</span>
+<div class="tutor-mode-grid">
+<button class="tutor-mode active" data-mode="teach" type="button"><strong>Teach</strong><span>Explain like a medical teacher</span></button>
+<button class="tutor-mode" data-mode="quiz" type="button"><strong>Quiz</strong><span>Generate a scored quiz</span></button>
+<button class="tutor-mode" data-mode="flashcards" type="button"><strong>Flashcards</strong><span>Create study cards</span></button>
+<button class="tutor-mode" data-mode="followup" type="button"><strong>Test Me</strong><span>Ask one question at a time</span></button>
+<button class="tutor-mode" data-mode="alberta" type="button"><strong>Alberta Practice</strong><span>Biology 20 or Chemistry 30</span></button>
+<button class="tutor-mode" data-mode="recommend" type="button"><strong>Next Lesson</strong><span>Use my weak areas</span></button>
+</div>
+</div>
+<div class="card">
+<h3>Learning settings</h3>
+<label class="tutor-label" for="tutorTopic">Topic</label>
+<input class="tutor-input" id="tutorTopic" placeholder="e.g. hypothyroidism, ECG, redox"/>
+<label class="tutor-label" for="tutorLevel">Explanation level</label>
+<select class="tutor-input" id="tutorLevel">
+<option value="high-school">High school</option>
+<option value="pre-med">Pre-med</option>
+<option value="simple">Very simple</option>
+</select>
+<label class="tutor-label" for="tutorCourse">Course focus</label>
+<select class="tutor-input" id="tutorCourse">
+<option value="">General medicine</option>
+<option value="Biology 20">Alberta Biology 20</option>
+<option value="Chemistry 30">Alberta Chemistry 30</option>
+</select>
+</div>
+<div class="card">
+<h3>Your mastery</h3>
+<div class="mastery-summary" id="masterySummary">
+<p class="small">Complete quizzes and tutor questions to build your mastery profile.</p>
+</div>
+<button class="btn btn-secondary" id="resetTutorProgress" type="button">Reset tutor progress</button>
+</div>
+</aside>
+<section class="tutor-workspace">
+<div class="tutor-topbar">
+<div class="ai-avatar">M</div>
+<div><strong>MedMinute AI Tutor</strong><span id="tutorStatus">Choose a mode and enter a topic</span></div>
+<button class="btn btn-secondary" id="clearTutorSession" type="button">New session</button>
+</div>
+<div aria-live="polite" class="tutor-conversation" id="tutorConversation">
+<div class="ai-message assistant">
+<div class="ai-message-label">AI Tutor</div>
+<div class="ai-bubble">I can teach a disease, create a quiz or flashcards, test you step by step, and recommend what to study next. Choose a mode and enter a topic.</div>
+</div>
+</div>
+<div class="tutor-activity" id="tutorActivity"></div>
+<div class="tutor-prompt-area">
+<label for="tutorPrompt">Additional instruction or answer</label>
+<textarea id="tutorPrompt" placeholder="Examples: Focus on diagnosis and treatment. Or type your answer to the tutor's question." rows="3"></textarea>
+<div class="ai-composer-row">
+<span class="small">Your current session is remembered until you start a new session or close the page.</span>
+<button class="btn btn-primary" id="runTutor" type="button">Start Tutor</button>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section class="section section-soft">
+<div class="container premium-grid">
+<div class="premium-card"><strong>Medical teaching</strong><p>Explains mechanisms, symptoms, diagnosis and treatment using only MedMinute material.</p></div>
+<div class="premium-card"><strong>Adaptive testing</strong><p>Quiz scores update your local mastery profile and influence future recommendations.</p></div>
+<div class="premium-card"><strong>Study generation</strong><p>Creates flashcards and Alberta-style original practice questions without copying secured exam material.</p></div>
+</div>
+</section>
+
+<section class="section section-soft"><div class="container grid-2">
+<a class="card" href="image-explainer.html"><span class="eyebrow">New AI tool</span><h3>Explore AI Medical Images</h3><p>Upload a de-identified educational image for a structured explanation.</p></a>
+<a class="card" href="certificates.html"><span class="eyebrow">Credentials</span><h3>Generate a Completion Certificate</h3><p>Eligible learners can create and download a MedMinute certificate.</p></a>
+</div></section>
+</main>
+<footer class="pro-footer">
+<div class="container">
+<div class="pro-footer-grid">
+<div>
+<a class="pro-brand footer-brand" href="index.html">
+<img alt="MedMinute logo" src="assets/medminute-logo.png"/>
+<div><strong>MedMinute</strong><span>Making medicine understandable.</span></div>
+</a>
+<p>A student-led medical education platform created in Qatar.</p>
+</div>
+<div><h3>Learn</h3><a href="health-library.html">Health Library</a><a href="anatomy.html">Interactive Anatomy</a><a href="dictionary.html">Medical Dictionary</a></div>
+<div><h3>Study</h3><a href="academy.html">Academy</a><a href="final-exams.html">Final Exams</a><a href="cases.html">Case Challenges</a></div>
+<div><h3>Explore</h3><a href="ai-tutor.html">MedMinute AI Tutor</a><a href="ai-assistant.html">MedMinute AI Q&amp;A</a><a href="specialties.html">Career Guides</a><a href="founder.html">Meet the Founder</a><a href="impact.html">Live Impact</a><a href="certificates.html">Certificates</a></div>
+</div>
+<div class="footer-line">
+<span>© 2026 MedMinute</span>
+<span>Educational content only. Not medical advice.</span>
+<a href="mailto:infomedminute@gmail.com">infomedminute@gmail.com</a>
+</div>
+</div>
+</footer>
+<script src="assets/search-index.js"></script>
+<script src="assets/script.js"></script>
+<div class="accessibility-launcher">
+<button aria-label="Open accessibility controls" id="accessibilityToggle">Aa</button>
+<div class="accessibility-panel" id="accessibilityPanel">
+<strong>Accessibility</strong>
+<button data-accessibility="font-down" type="button">Decrease text size</button>
+<button data-accessibility="font-up" type="button">Increase text size</button>
+<button data-accessibility="motion" type="button">Reduce animations</button>
+<button data-accessibility="contrast" type="button">High contrast</button>
+</div>
+</div>
+</body></html>
