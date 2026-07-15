@@ -410,5 +410,9 @@ app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-const port = Number(process.env.PORT || 3000);
-app.listen(port, () => console.log(`MedMinute running at http://localhost:${port}`));
+export default app;
+
+if (!process.env.VERCEL) {
+  const port = Number(process.env.PORT || 3000);
+  app.listen(port, () => console.log(`MedMinute running at http://localhost:${port}`));
+}
